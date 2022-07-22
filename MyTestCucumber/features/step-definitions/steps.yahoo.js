@@ -71,6 +71,13 @@ When(/^I fill in mail "(.*)" and (.+) and (.+)$/, async (toField,subject,body) =
     await mailPage.inputEmail(toField,subject,body); 
 });
 
+Then(/^I expect mail matches pattern "(.*)"$/, async (regex) => {
+    const emailAddres=await mailPage.toFieldMail.getText(); 
+    const pattern=new RegExp(regex);
+    const isMatch=pattern.test(emailAddres);
+    expect(isMatch).is.equal(true);
+});
+
 When(/^I click on Draft folder$/, async () => {
     await draftMail.folderDraft.click();
 });
