@@ -18,6 +18,7 @@
     Then I expect subjectField is displayed
     Then I expect bodyField is displayed
     When I fill in mail "sannav1985@gmail.com" and "Mail" and "Text"
+    Then I expect mail matches pattern "\w+@\w+\.com"
     When I click on Draft folder
     When I click on mail in draft
     Then I expect toField in draft is displayed
