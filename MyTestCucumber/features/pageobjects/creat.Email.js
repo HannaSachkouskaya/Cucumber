@@ -7,6 +7,10 @@ class mailPage {
     get toField() {
         return $('//input[@id="message-to-field"]');
     }
+    
+     get toFieldMail() {
+        return $('//div[text()="sannav1985@gmail.com"]');
+    }
 
     get toSubject() {
         return $('//input[@data-test-id="compose-subject"]');
